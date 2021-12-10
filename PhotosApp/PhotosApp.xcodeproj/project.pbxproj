@@ -17,6 +17,9 @@
 		C2191B412763E57600E4A04A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2191B402763E57600E4A04A /* Assets.xcassets */; };
 		C2191B442763E57600E4A04A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2191B422763E57600E4A04A /* LaunchScreen.storyboard */; };
 		C2191B4F2763E57600E4A04A /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B4E2763E57600E4A04A /* PhotosAppTests.swift */; };
+		C2191B672764009500E4A04A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B662764009500E4A04A /* User.swift */; };
+		C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */; };
+		C2191B6B2764063300E4A04A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B6A2764063300E4A04A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		C2191B4A2763E57600E4A04A /* PhotosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2191B4E2763E57600E4A04A /* PhotosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppTests.swift; sourceTree = "<group>"; };
 		C2191B502763E57600E4A04A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2191B662764009500E4A04A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDataSource.swift; sourceTree = "<group>"; };
+		C2191B6A2764063300E4A04A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,6 @@
 				6EDFAEBB953DE769300912D3 /* Pods-PhotosAppTests.debug.xcconfig */,
 				76C9960504BB494EE8DD6872 /* Pods-PhotosAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,6 +148,7 @@
 		C2191B592763EDA900E4A04A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B6A2764063300E4A04A /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 		C2191B622763EF3500E4A04A /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */,
 			);
 			path = LocalDataSource;
 			sourceTree = "<group>";
@@ -189,6 +196,7 @@
 		C2191B632763EF4D00E4A04A /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B662764009500E4A04A /* User.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -360,7 +368,10 @@
 				C2191B3F2763E57500E4A04A /* PhotosApp.xcdatamodeld in Sources */,
 				C2191B392763E57500E4A04A /* ViewController.swift in Sources */,
 				C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */,
+				C2191B672764009500E4A04A /* User.swift in Sources */,
+				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
+				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
