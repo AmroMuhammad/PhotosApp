@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class UsersLocalDataSource{
-    let sharedInstance = UsersLocalDataSource()
+    static let sharedInstance = UsersLocalDataSource()
     
     private let appDelegate:AppDelegate
     private let managedContext:NSManagedObjectContext
