@@ -22,6 +22,10 @@ class PhotosAPI : BaseAPI<ApplicationNetworking>, PhotosAPIContract{
             completion(result)
         }
     }
+    
+    func cancelAllRequests() {
+        self.cancelAnyRequest()
+    }
 
 }
 

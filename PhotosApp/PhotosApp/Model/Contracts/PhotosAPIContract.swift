@@ -9,4 +9,5 @@
 import Foundation
 protocol PhotosAPIContract {
     func getPhotos(page:String,limit:String,completion: @escaping (Result<PhotoModel?,NSError>) -> Void)
+    func cancelAllRequests()
 }

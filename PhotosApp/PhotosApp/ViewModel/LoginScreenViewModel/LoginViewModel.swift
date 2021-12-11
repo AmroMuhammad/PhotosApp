@@ -55,6 +55,8 @@ class LoginViewModel : LoginViewModelContract{
                 }else{
                     self.errorSubject.onNext(Constants.loginPasswordError)
                 }
+                self.loadingSubject.onNext(false)
+                print("amrooooooo2222")
             case .failure(_):
                 self.loadingSubject.onNext(false)
                 self.errorSubject.onNext(Constants.noUserError)

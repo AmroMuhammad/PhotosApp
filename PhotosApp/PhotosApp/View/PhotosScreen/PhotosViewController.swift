@@ -13,19 +13,37 @@ import RxSwift
 class PhotosViewController: BaseViewController {
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     
+    private lazy var viewSpinner: UIView = {
+        let view = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: photosCollectionView.frame.size.width,
+            height: 100)
+        )
+        let spinner = UIActivityIndicatorView()
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        return view
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        return refreshControl
+    }()
+    
     private var disposeBag:DisposeBag!
     private var photosViewModel:PhotosViewModelContract!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         registerCellNibFile()
         instantiateRXItems()
         
         listenOnObservables()
+        instantiateRefreshControl()
         
-        photosViewModel.fetchPhotos(page: "1", limit: "10")
-
     }
     
     private func registerCellNibFile(){
@@ -39,6 +57,15 @@ class PhotosViewController: BaseViewController {
         photosCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
+    private func instantiateRefreshControl(){
+        photosCollectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshControlTriggered), for: .valueChanged)
+    }
+    
+    @objc private func refreshControlTriggered() {
+        photosViewModel.refreshControlAction.onNext(())
+    }
+    
     private func listenOnObservables(){
         photosViewModel.errorObservable.subscribe(onNext: {[weak self] (message) in
             guard let self = self else{
@@ -46,7 +73,7 @@ class PhotosViewController: BaseViewController {
                 return
             }
             self.showAlert(title: "Error", body: message, actions: [UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)])
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
         photosViewModel.loadingObservable.subscribe(onNext: {[weak self] (boolValue) in
             guard let self = self else{
@@ -59,12 +86,43 @@ class PhotosViewController: BaseViewController {
             case false:
                 self.hideLoading()
             }
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
-        photosViewModel.dataObservable.bind(to: photosCollectionView.rx.items(cellIdentifier: Constants.photoCellNibName)){ row,item,cell in
-           let castedCell = cell as! PhotoTableViewCell
-            castedCell.photoModel = item
+        photosViewModel.items.bind(to: photosCollectionView.rx.items) { collectionView, row, item in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.photoCellNibName, for: IndexPath(index: row)) as! PhotoTableViewCell
+            cell.photoModel = item
+            return cell
+        }
+        .disposed(by: disposeBag)
+        
+        photosCollectionView.rx.didScroll.subscribe { [weak self] _ in
+            guard let self = self else {
+                print("PVC* error in didScroll")
+                return }
+            let offSetY = self.photosCollectionView.contentOffset.y
+            let contentHeight = self.photosCollectionView.contentSize.height
+            
+            if offSetY > (contentHeight - self.photosCollectionView.frame.size.height - 100) {
+                self.photosViewModel.fetchMoreDatas.onNext(())
+            }
         }.disposed(by: disposeBag)
+        
+        photosViewModel.isLoadingSpinnerAvaliable.subscribe { [weak self] isAvaliable in
+            guard let isAvaliable = isAvaliable.element,
+                let self = self else { return }
+            if(isAvaliable){
+                self.showLoading()
+            }else{
+                self.hideLoading()
+            }
+        }
+        .disposed(by: disposeBag)
+        
+        photosViewModel.refreshControlCompelted.subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.refreshControl.endRefreshing()
+        }
+        .disposed(by: disposeBag)
     }
 }
 

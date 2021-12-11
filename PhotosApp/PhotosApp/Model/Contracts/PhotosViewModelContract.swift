@@ -8,8 +8,13 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 protocol PhotosViewModelContract : BaseViewModelContract {
-    var dataObservable: Observable<PhotoModel> {get}
-    func fetchPhotos(page:String,limit:String)
+    var items: BehaviorRelay<PhotoModel> {get}
+    var fetchMoreDatas: PublishSubject<Void> {get}
+    var refreshControlCompelted : PublishSubject<Void> {get}
+    var isLoadingSpinnerAvaliable : PublishSubject<Bool> {get}
+    var refreshControlAction : PublishSubject<Void> {get}
+
 }
