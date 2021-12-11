@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		699B5B8CC10C909DF8937D49 /* Pods_PhotosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BCADF7D93E2259CFAA8FC9 /* Pods_PhotosApp.framework */; };
-		97E440DB1844761216C232BA /* Pods_PhotosAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C42416032307705E477EF7A /* Pods_PhotosAppTests.framework */; };
 		C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B342763E57500E4A04A /* AppDelegate.swift */; };
 		C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B362763E57500E4A04A /* SceneDelegate.swift */; };
 		C2191B392763E57500E4A04A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B382763E57500E4A04A /* ViewController.swift */; };
@@ -17,20 +15,6 @@
 		C2191B412763E57600E4A04A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2191B402763E57600E4A04A /* Assets.xcassets */; };
 		C2191B442763E57600E4A04A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2191B422763E57600E4A04A /* LaunchScreen.storyboard */; };
 		C2191B4F2763E57600E4A04A /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B4E2763E57600E4A04A /* PhotosAppTests.swift */; };
-		C2191B672764009500E4A04A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B662764009500E4A04A /* User.swift */; };
-		C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */; };
-		C2191B6B2764063300E4A04A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B6A2764063300E4A04A /* Constants.swift */; };
-		C2191B6E27641CDC00E4A04A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */; };
-		C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */; };
-		C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B75276420B500E4A04A /* BaseViewController.swift */; };
-		C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */; };
-		C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */; };
-		C2191B7C2764340300E4A04A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7B2764340300E4A04A /* Utils.swift */; };
-		C2191B802764449800E4A04A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7F2764449800E4A04A /* LoginViewController.swift */; };
-		C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B81276444B500E4A04A /* LoginViewModel.swift */; };
-		C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B832764477800E4A04A /* LoginViewModelContract.swift */; };
-		C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B852764514E00E4A04A /* LocalUserDefault.swift */; };
-		C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C42416032307705E477EF7A /* Pods_PhotosAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54F8CF2B2B923D75748517DB /* Pods-PhotosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosApp.release.xcconfig"; path = "Target Support Files/Pods-PhotosApp/Pods-PhotosApp.release.xcconfig"; sourceTree = "<group>"; };
-		6EDFAEBB953DE769300912D3 /* Pods-PhotosAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotosAppTests/Pods-PhotosAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		76C9960504BB494EE8DD6872 /* Pods-PhotosAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosAppTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosAppTests/Pods-PhotosAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		88BCADF7D93E2259CFAA8FC9 /* Pods_PhotosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7887AF3DCDA837D24FD4789 /* Pods-PhotosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotosApp/Pods-PhotosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C2191B312763E57500E4A04A /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2191B342763E57500E4A04A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2191B362763E57500E4A04A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,20 +40,6 @@
 		C2191B4A2763E57600E4A04A /* PhotosAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2191B4E2763E57600E4A04A /* PhotosAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppTests.swift; sourceTree = "<group>"; };
 		C2191B502763E57600E4A04A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2191B662764009500E4A04A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDataSource.swift; sourceTree = "<group>"; };
-		C2191B6A2764063300E4A04A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		C2191B75276420B500E4A04A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelContract.swift; sourceTree = "<group>"; };
-		C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelContract.swift; sourceTree = "<group>"; };
-		C2191B7B2764340300E4A04A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		C2191B7F2764449800E4A04A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C2191B81276444B500E4A04A /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		C2191B832764477800E4A04A /* LoginViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelContract.swift; sourceTree = "<group>"; };
-		C2191B852764514E00E4A04A /* LocalUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefault.swift; sourceTree = "<group>"; };
-		C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				699B5B8CC10C909DF8937D49 /* Pods_PhotosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,41 +54,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97E440DB1844761216C232BA /* Pods_PhotosAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5532369BA1CFEAA31FB4CC59 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				88BCADF7D93E2259CFAA8FC9 /* Pods_PhotosApp.framework */,
-				1C42416032307705E477EF7A /* Pods_PhotosAppTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		689A3A12469E8596F6641083 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B7887AF3DCDA837D24FD4789 /* Pods-PhotosApp.debug.xcconfig */,
-				54F8CF2B2B923D75748517DB /* Pods-PhotosApp.release.xcconfig */,
-				6EDFAEBB953DE769300912D3 /* Pods-PhotosAppTests.debug.xcconfig */,
-				76C9960504BB494EE8DD6872 /* Pods-PhotosAppTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		C2191B282763E57500E4A04A = {
 			isa = PBXGroup;
 			children = (
 				C2191B332763E57500E4A04A /* PhotosApp */,
 				C2191B4D2763E57600E4A04A /* PhotosAppTests */,
 				C2191B322763E57500E4A04A /* Products */,
-				689A3A12469E8596F6641083 /* Pods */,
-				5532369BA1CFEAA31FB4CC59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,11 +81,6 @@
 		C2191B332763E57500E4A04A /* PhotosApp */ = {
 			isa = PBXGroup;
 			children = (
-				C2191B652763EFB000E4A04A /* Repository */,
-				C2191B5D2763EE1800E4A04A /* Model */,
-				C2191B5E2763EE2300E4A04A /* View */,
-				C2191B5F2763EE2A00E4A04A /* ViewModel */,
-				C2191B592763EDA900E4A04A /* Utils */,
 				C2191B342763E57500E4A04A /* AppDelegate.swift */,
 				C2191B362763E57500E4A04A /* SceneDelegate.swift */,
 				C2191B382763E57500E4A04A /* ViewController.swift */,
@@ -167,127 +102,6 @@
 			path = PhotosAppTests;
 			sourceTree = "<group>";
 		};
-		C2191B592763EDA900E4A04A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B6A2764063300E4A04A /* Constants.swift */,
-				C2191B7B2764340300E4A04A /* Utils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		C2191B5D2763EE1800E4A04A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B642763EF5600E4A04A /* Contracts */,
-				C2191B632763EF4D00E4A04A /* DTO */,
-				C2191B622763EF3500E4A04A /* LocalDataSource */,
-				C2191B612763EEC000E4A04A /* RemoteDataSource */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C2191B5E2763EE2300E4A04A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B7E2764407500E4A04A /* LoginScreen */,
-				C2191B742764209A00E4A04A /* BaseViewController */,
-				C2191B6C27641CC300E4A04A /* RegisterScreen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C2191B5F2763EE2A00E4A04A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B7D2764405D00E4A04A /* LoginScreenViewModel */,
-				C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		C2191B612763EEC000E4A04A /* RemoteDataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RemoteDataSource;
-			sourceTree = "<group>";
-		};
-		C2191B622763EF3500E4A04A /* LocalDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */,
-				C2191B852764514E00E4A04A /* LocalUserDefault.swift */,
-			);
-			path = LocalDataSource;
-			sourceTree = "<group>";
-		};
-		C2191B632763EF4D00E4A04A /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B662764009500E4A04A /* User.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		C2191B642763EF5600E4A04A /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */,
-				C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */,
-				C2191B832764477800E4A04A /* LoginViewModelContract.swift */,
-				C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */,
-			);
-			path = Contracts;
-			sourceTree = "<group>";
-		};
-		C2191B652763EFB000E4A04A /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		C2191B6C27641CC300E4A04A /* RegisterScreen */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */,
-			);
-			path = RegisterScreen;
-			sourceTree = "<group>";
-		};
-		C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */,
-			);
-			path = RegisterScreenViewModel;
-			sourceTree = "<group>";
-		};
-		C2191B742764209A00E4A04A /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B75276420B500E4A04A /* BaseViewController.swift */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		C2191B7D2764405D00E4A04A /* LoginScreenViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B81276444B500E4A04A /* LoginViewModel.swift */,
-			);
-			path = LoginScreenViewModel;
-			sourceTree = "<group>";
-		};
-		C2191B7E2764407500E4A04A /* LoginScreen */ = {
-			isa = PBXGroup;
-			children = (
-				C2191B7F2764449800E4A04A /* LoginViewController.swift */,
-			);
-			path = LoginScreen;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,11 +109,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2191B532763E57600E4A04A /* Build configuration list for PBXNativeTarget "PhotosApp" */;
 			buildPhases = (
-				58FFD41512B149ED2ED83C6F /* [CP] Check Pods Manifest.lock */,
 				C2191B2D2763E57500E4A04A /* Sources */,
 				C2191B2E2763E57500E4A04A /* Frameworks */,
 				C2191B2F2763E57500E4A04A /* Resources */,
-				84D6DE1D0561124A9B1CBBD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,7 +126,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2191B562763E57600E4A04A /* Build configuration list for PBXNativeTarget "PhotosAppTests" */;
 			buildPhases = (
-				FF705FE29B66DDB4D6FF7800 /* [CP] Check Pods Manifest.lock */,
 				C2191B462763E57600E4A04A /* Sources */,
 				C2191B472763E57600E4A04A /* Frameworks */,
 				C2191B482763E57600E4A04A /* Resources */,
@@ -387,70 +198,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		58FFD41512B149ED2ED83C6F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PhotosApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84D6DE1D0561124A9B1CBBD6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF705FE29B66DDB4D6FF7800 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PhotosAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C2191B2D2763E57500E4A04A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -459,21 +206,7 @@
 				C2191B3F2763E57500E4A04A /* PhotosApp.xcdatamodeld in Sources */,
 				C2191B392763E57500E4A04A /* ViewController.swift in Sources */,
 				C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */,
-				C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */,
-				C2191B6E27641CDC00E4A04A /* RegisterViewController.swift in Sources */,
-				C2191B7C2764340300E4A04A /* Utils.swift in Sources */,
-				C2191B672764009500E4A04A /* User.swift in Sources */,
-				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
-				C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */,
-				C2191B802764449800E4A04A /* LoginViewController.swift in Sources */,
-				C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */,
-				C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */,
-				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
-				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,
-				C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */,
-				C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */,
-				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,7 +364,6 @@
 		};
 		C2191B542763E57600E4A04A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7887AF3DCDA837D24FD4789 /* Pods-PhotosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -649,7 +381,6 @@
 		};
 		C2191B552763E57600E4A04A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54F8CF2B2B923D75748517DB /* Pods-PhotosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -667,7 +398,6 @@
 		};
 		C2191B572763E57600E4A04A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EDFAEBB953DE769300912D3 /* Pods-PhotosAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -689,7 +419,6 @@
 		};
 		C2191B582763E57600E4A04A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76C9960504BB494EE8DD6872 /* Pods-PhotosAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
