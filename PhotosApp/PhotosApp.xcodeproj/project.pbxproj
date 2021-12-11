@@ -180,8 +180,9 @@
 		C2191B5E2763EE2300E4A04A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B7E2764407500E4A04A /* LoginScreen */,
 				C2191B742764209A00E4A04A /* BaseViewController */,
-				C2191B6C27641CC300E4A04A /* Register Screen */,
+				C2191B6C27641CC300E4A04A /* RegisterScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +190,7 @@
 		C2191B5F2763EE2A00E4A04A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B7D2764405D00E4A04A /* LoginScreenViewModel */,
 				C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */,
 			);
 			path = ViewModel;
@@ -233,12 +235,12 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		C2191B6C27641CC300E4A04A /* Register Screen */ = {
+		C2191B6C27641CC300E4A04A /* RegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
 				C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */,
 			);
-			path = "Register Screen";
+			path = RegisterScreen;
 			sourceTree = "<group>";
 		};
 		C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */ = {
@@ -255,6 +257,20 @@
 				C2191B75276420B500E4A04A /* BaseViewController.swift */,
 			);
 			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		C2191B7D2764405D00E4A04A /* LoginScreenViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginScreenViewModel;
+			sourceTree = "<group>";
+		};
+		C2191B7E2764407500E4A04A /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
