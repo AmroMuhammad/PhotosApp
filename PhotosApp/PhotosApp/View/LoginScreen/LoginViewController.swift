@@ -74,7 +74,7 @@ class LoginViewController: BaseViewController {
     }
     
     private func navigateToHomeScreen(){
-        let homeVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+        let homeVC = self.storyboard?.instantiateViewController(identifier: Constants.photosVC) as! PhotosViewController
         phoneNumberTextField.text = ""
         self.navigationController?.pushViewController(homeVC, animated: true)
     }

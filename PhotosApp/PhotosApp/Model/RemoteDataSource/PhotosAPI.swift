@@ -19,8 +19,7 @@ class PhotosAPI : BaseAPI<ApplicationNetworking>, PhotosAPIContract{
 
     func getPhotos(page: String, limit: String, completion: @escaping (Result<PhotoModel?, NSError>) -> Void) {
         self.fetchData(target: .getPhotos(page: page, limit: limit), responseClass: PhotoModelElement.self) { (result) in
-            print("reeeeesult")
-            print(result)
+            completion(result)
         }
     }
 
