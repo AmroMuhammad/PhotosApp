@@ -22,9 +22,10 @@ class UsersLocalDataSource{
         entity = NSEntityDescription.entity(forEntityName: Constants.usersDatabaseName,in: managedContext)
     }
     
-    func save(user: User) {
+    func save(user: User,completion: @escaping (Result<Bool,NSError>) -> Void){
         guard let entity = entity else{
             print("cant find entity")
+            completion(.failure(NSError(domain: Constants.databaseDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])))
             return
         }
         
@@ -34,28 +35,31 @@ class UsersLocalDataSource{
         
         do {
             try managedContext.save()
+            print("ULDS* saved successfully")
+            completion(.success(true))
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+            completion(.failure(error))
         }
     }
     
-    func fetchUser(byName name:String)->User?{
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: Constants.usersDatabaseName)
+    func fetchUser(byPhoneNumber phone:String,completion: @escaping (Result<User,NSError>) -> Void){
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: Constants.usersDatabaseName)
+        fetchRequest.predicate = NSPredicate(format: "phoneNumber LIKE %@", phone)
         
-        fetchRequest.predicate = NSPredicate(format: "phoneNumber LIKE %@", name)
-        //3
         do {
             guard let storedUser = try managedContext.fetch(fetchRequest).first else{
                 print("user not found")
-                return nil
+                completion(.failure(NSError(domain: Constants.databaseDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.noUserError])))
+                return
             }
             let userPhone = storedUser.value(forKey: Constants.userPhone) as! String
             let userPass = storedUser.value(forKey: Constants.userPassword) as! String
-            return User(phoneNumber: userPhone, password: userPass)
+            print("ULDS* fetched successfully")
+            completion(.success(User(phoneNumber: userPhone, password: userPass)))
         } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
-            return nil
+            print("Could not fetch. \(error), \(error.userInfo)")
+            completion(.failure(NSError(domain: Constants.databaseDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.noUserError])))
         }
     }
 }

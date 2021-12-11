@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,12 @@
 		C2191B672764009500E4A04A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B662764009500E4A04A /* User.swift */; };
 		C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */; };
 		C2191B6B2764063300E4A04A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B6A2764063300E4A04A /* Constants.swift */; };
+		C2191B6E27641CDC00E4A04A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */; };
+		C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */; };
+		C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B75276420B500E4A04A /* BaseViewController.swift */; };
+		C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */; };
+		C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */; };
+		C2191B7C2764340300E4A04A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7B2764340300E4A04A /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,12 @@
 		C2191B662764009500E4A04A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDataSource.swift; sourceTree = "<group>"; };
 		C2191B6A2764063300E4A04A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C2191B75276420B500E4A04A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelContract.swift; sourceTree = "<group>"; };
+		C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelContract.swift; sourceTree = "<group>"; };
+		C2191B7B2764340300E4A04A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C2191B6A2764063300E4A04A /* Constants.swift */,
+				C2191B7B2764340300E4A04A /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -167,6 +180,8 @@
 		C2191B5E2763EE2300E4A04A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B742764209A00E4A04A /* BaseViewController */,
+				C2191B6C27641CC300E4A04A /* Register Screen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +189,7 @@
 		C2191B5F2763EE2A00E4A04A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -204,6 +220,8 @@
 		C2191B642763EF5600E4A04A /* Contracts */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */,
+				C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -213,6 +231,30 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		C2191B6C27641CC300E4A04A /* Register Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C2191B6D27641CDC00E4A04A /* RegisterViewController.swift */,
+			);
+			path = "Register Screen";
+			sourceTree = "<group>";
+		};
+		C2191B6F27641D2700E4A04A /* RegisterScreenViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C2191B7027641D3E00E4A04A /* RegisterViewModel.swift */,
+			);
+			path = RegisterScreenViewModel;
+			sourceTree = "<group>";
+		};
+		C2191B742764209A00E4A04A /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C2191B75276420B500E4A04A /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +268,7 @@
 				C2191B2D2763E57500E4A04A /* Sources */,
 				C2191B2E2763E57500E4A04A /* Frameworks */,
 				C2191B2F2763E57500E4A04A /* Resources */,
+				84D6DE1D0561124A9B1CBBD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +379,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84D6DE1D0561124A9B1CBBD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotosApp/Pods-PhotosApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FF705FE29B66DDB4D6FF7800 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,9 +428,15 @@
 				C2191B3F2763E57500E4A04A /* PhotosApp.xcdatamodeld in Sources */,
 				C2191B392763E57500E4A04A /* ViewController.swift in Sources */,
 				C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */,
+				C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */,
+				C2191B6E27641CDC00E4A04A /* RegisterViewController.swift in Sources */,
+				C2191B7C2764340300E4A04A /* Utils.swift in Sources */,
 				C2191B672764009500E4A04A /* User.swift in Sources */,
+				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
+				C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */,
 				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
+				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,
 				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

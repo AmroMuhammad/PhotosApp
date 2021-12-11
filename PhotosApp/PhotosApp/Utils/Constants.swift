@@ -12,4 +12,13 @@ struct Constants{
     static let usersDatabaseName = "Users"
     static let userPhone = "phoneNumber"
     static let userPassword = "password"
+    static let genericError = "General Error occured, kindly try again later"
+    static let databaseDomain = "databaseDomain"
+    static let emptyFieldsError = "All Fields should be filled"
+    static let phoneNumberError = "Phone Number should be 11 numbers"
+    static let passwordError = "password should be more than 5 characters"
+    static let passwordNotEqualError = "password is not the same as confirm password"
+    static let noUserError = "No User Found"
+    static let userFoundError = "User already Found"
+
 }
