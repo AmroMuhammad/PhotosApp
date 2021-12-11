@@ -12,5 +12,5 @@ import RxSwift
 protocol LoginViewModelContract : BaseViewModelContract {
     var signedInObservable: Observable<Bool> {get}
     func validateRegisterdData(phoneNumber:String,password:String)
-
+    func checkForLoggingState()
 }

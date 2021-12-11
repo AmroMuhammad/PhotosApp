@@ -17,12 +17,13 @@ class RegisterViewController: BaseViewController {
     
     private var registerViewModel:RegisterViewModelContract!
     private var disposeBag:DisposeBag!
+    weak var delegate:PhoneNumberVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         disposeBag = DisposeBag()
-        self.title = "Regestration"
+        
         passwordTextField.disableAutoFill()
         confirmPasswordTextField.disableAutoFill()
         
@@ -50,10 +51,15 @@ class RegisterViewController: BaseViewController {
             }
             }).disposed(by: disposeBag)
         
-        registerViewModel.doneObservable.subscribe(onCompleted: {
+        registerViewModel.doneObservable.subscribe(onNext: {[weak self] (user) in
+            guard let self = self else{
+                print("RVC* error in doneObservable")
+                return
+            }
+            self.delegate.setPhoneNumber(phoneNumber: user.phoneNumber)
             self.navigationController?.popViewController(animated: true)
-            //TODO: amroo: add delegate here to send back phoneNumber after successfull register
             }).disposed(by: disposeBag)
+        
     }
   
     @IBAction func didSubmitClicked(_ sender: Any) {

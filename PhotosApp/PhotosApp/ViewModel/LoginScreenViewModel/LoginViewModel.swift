@@ -47,14 +47,32 @@ class LoginViewModel : LoginViewModelContract{
                 return
             }
             switch result{
-            case .success(_):
-                self.loadingSubject.onNext(true)
-                //change to signedIN in userDefaults
-                self.signedInSubject.onCompleted()
+            case .success(let storedUser):
+                self.loadingSubject.onNext(false)
+                if(self.checkForPassword(storedUser: storedUser, inputUser: user)){
+                    LocalUserDefaults.sharedInstance.changeLoggingState(loginState: true)
+                    self.signedInSubject.onNext(true)
+                }else{
+                    self.errorSubject.onNext(Constants.loginPasswordError)
+                }
             case .failure(_):
-                self.loadingSubject.onNext(true)
+                self.loadingSubject.onNext(false)
                 self.errorSubject.onNext(Constants.noUserError)
             }
         }
     }
+    
+    private func checkForPassword(storedUser:User,inputUser:User)->Bool{
+        return storedUser.password == inputUser.password
+    }
+    
+    func checkForLoggingState() {
+        loadingSubject.onNext(true)
+        if(LocalUserDefaults.sharedInstance.isLoggedIn()){
+            self.signedInSubject.onNext(true)
+        }
+        loadingSubject.onNext(false)
+
+    }
+    
 }

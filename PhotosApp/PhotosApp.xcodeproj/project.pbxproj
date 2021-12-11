@@ -29,6 +29,8 @@
 		C2191B802764449800E4A04A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7F2764449800E4A04A /* LoginViewController.swift */; };
 		C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B81276444B500E4A04A /* LoginViewModel.swift */; };
 		C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B832764477800E4A04A /* LoginViewModelContract.swift */; };
+		C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B852764514E00E4A04A /* LocalUserDefault.swift */; };
+		C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		C2191B7F2764449800E4A04A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C2191B81276444B500E4A04A /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C2191B832764477800E4A04A /* LoginViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelContract.swift; sourceTree = "<group>"; };
+		C2191B852764514E00E4A04A /* LocalUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefault.swift; sourceTree = "<group>"; };
+		C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVCDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */,
+				C2191B852764514E00E4A04A /* LocalUserDefault.swift */,
 			);
 			path = LocalDataSource;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */,
 				C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */,
 				C2191B832764477800E4A04A /* LoginViewModelContract.swift */,
+				C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -465,6 +471,8 @@
 				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
 				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,
+				C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */,
+				C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */,
 				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

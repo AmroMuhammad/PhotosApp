@@ -18,18 +18,17 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Login"
-        
+                
         loginViewModel = LoginViewModel()
         disposeBag = DisposeBag()
+        passwordTextField.disableAutoFill()
         
         loginViewModel.errorObservable.subscribe(onNext: {[weak self] (message) in
             guard let self = self else{
                 print("LVC* error in errorObservable")
                 return
             }
-            
+            self.showAlert(title: "Error", body: message, actions: [UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)])
             }).disposed(by: disposeBag)
         
         loginViewModel.loadingObservable.subscribe(onNext: {[weak self] (boolValue) in
@@ -52,19 +51,40 @@ class LoginViewController: BaseViewController {
             }
             switch boolValue{
             case true:
-                print("asd")
+                self.navigateToHomeScreen()
             case false:
-                print("asd")
+                print("LVC* signedInObservable failed")
             }
             }).disposed(by: disposeBag)
         
+        loginViewModel.checkForLoggingState()
+        
     }
+    
+    
     
     @IBAction func didLoginClicked(_ sender: Any) {
         loginViewModel.validateRegisterdData(phoneNumber: phoneNumberTextField.text!, password: passwordTextField.text!)
     }
     
     @IBAction func didRegisterClicked(_ sender: Any) {
+        let registerVC = self.storyboard?.instantiateViewController(identifier: Constants.registerVC) as! RegisterViewController
+        registerVC.delegate = self
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
+    
+    private func navigateToHomeScreen(){
+        let homeVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+        phoneNumberTextField.text = ""
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+}
+
+extension LoginViewController : PhoneNumberVCDelegate{
+    func setPhoneNumber(phoneNumber: String) {
+        phoneNumberTextField.text = phoneNumber
+    }
+    
     
 }

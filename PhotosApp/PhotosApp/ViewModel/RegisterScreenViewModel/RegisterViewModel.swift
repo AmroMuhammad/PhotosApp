@@ -12,11 +12,11 @@ import RxSwift
 class RegisterViewModel:RegisterViewModelContract{
     private var errorSubject = PublishSubject<(String)>()
     private var loadingsubject = PublishSubject<Bool>()
-    private var doneSubject = PublishSubject<Bool>()
+    private var doneSubject = PublishSubject<User>()
     
     var errorObservable: Observable<(String)>
     var loadingObservable: Observable<Bool>
-    var doneObservable: Observable<Bool>
+    var doneObservable: Observable<User>
 
     init() {
         errorObservable = errorSubject.asObservable()
@@ -56,7 +56,7 @@ class RegisterViewModel:RegisterViewModelContract{
                     switch result{
                     case .success(_):
                         self.loadingsubject.onNext(false)
-                        self.doneSubject.onCompleted()
+                        self.doneSubject.onNext(user)
                     case .failure(_):
                         self.loadingsubject.onNext(false)
                         self.errorSubject.onNext(Constants.genericError)
