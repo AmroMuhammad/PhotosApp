@@ -1,7 +1,11 @@
+//
 //  RegisterViewController.swift
-//  Shopify e-commerce
-//  Created by Ayman Omara on 30/05/2021.
-//  Copyright © 2021 ITI41. All rights reserved.
+//  PhotosApp
+//
+//  Created by Amr Muhammad on 12/10/21.
+//  Copyright © 2021 Amr Muhammad. All rights reserved.
+//
+
 import UIKit
 import RxCocoa
 import RxSwift
@@ -13,12 +17,13 @@ class RegisterViewController: BaseViewController {
     
     private var registerViewModel:RegisterViewModelContract!
     private var disposeBag:DisposeBag!
+    weak var delegate:PhoneNumberVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         disposeBag = DisposeBag()
-        self.title = "Regestration"
+        
         passwordTextField.disableAutoFill()
         confirmPasswordTextField.disableAutoFill()
         
@@ -46,10 +51,15 @@ class RegisterViewController: BaseViewController {
             }
             }).disposed(by: disposeBag)
         
-        registerViewModel.doneObservable.subscribe(onCompleted: {
+        registerViewModel.doneObservable.subscribe(onNext: {[weak self] (user) in
+            guard let self = self else{
+                print("RVC* error in doneObservable")
+                return
+            }
+            self.delegate.setPhoneNumber(phoneNumber: user.phoneNumber)
             self.navigationController?.popViewController(animated: true)
-            //TODO: amroo: add delegate here to send back phoneNumber after successfull register
             }).disposed(by: disposeBag)
+        
     }
   
     @IBAction func didSubmitClicked(_ sender: Any) {

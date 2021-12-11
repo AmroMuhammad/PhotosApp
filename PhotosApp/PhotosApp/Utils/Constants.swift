@@ -20,5 +20,9 @@ struct Constants{
     static let passwordNotEqualError = "password is not the same as confirm password"
     static let noUserError = "No User Found"
     static let userFoundError = "User already Found"
+    static let isLoggedInUserDefaults = "isLogged"
+    static let loginVC = "LoginViewController"
+    static let registerVC = "RegisterViewController"
+    static let loginPasswordError = "Phone or password is wrong, please try again"
 
 }

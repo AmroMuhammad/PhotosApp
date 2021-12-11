@@ -12,5 +12,4 @@ import RxSwift
 protocol BaseViewModelContract{
     var errorObservable:Observable<(String)>{get}
     var loadingObservable: Observable<Bool> {get}
-    var doneObservable: Observable<Bool>{get}
 }
