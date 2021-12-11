@@ -1,10 +1,10 @@
 //
 //  RegisterViewModel.swift
-//  Shopify e-commerce
+//  PhotosApp
 //
-//  Created by Amr Muhammad on 6/10/21.
-//  Copyright © 2021 ITI41. All rights reserved.
-//
+//  Created by Amr Muhammad on 12/10/21.
+//  Copyright © 2021 Amr Muhammad. All rights reserved.
+
 
 import Foundation
 import RxSwift
@@ -28,7 +28,7 @@ class RegisterViewModel:RegisterViewModelContract{
         loadingsubject.onNext(true)
         if(phoneNumber.isEmpty || password.isEmpty || confirmPassword.isEmpty){
             errorSubject.onNext(Constants.emptyFieldsError)
-        }else if(!phoneNumRegexCheck(text: phoneNumber)){
+        }else if(!Utils.phoneNumRegexCheck(text: phoneNumber)){
             errorSubject.onNext(Constants.phoneNumberError)
         }else if(password.count <= 5){
             errorSubject.onNext(Constants.passwordError)
@@ -64,19 +64,6 @@ class RegisterViewModel:RegisterViewModelContract{
                 }
                 
             }
-        }
-    }
-    
-    private func phoneNumRegexCheck(text:String)->Bool{
-        if(text.count != 11){
-            return false
-        }
-        let range = NSRange(location: 0, length: text.utf16.count)
-        let regex = try! NSRegularExpression(pattern: "[0-9]{11}$")
-        if(regex.firstMatch(in: text, options: [], range: range) != nil){
-            return true
-        }else{
-            return false
         }
     }
 }

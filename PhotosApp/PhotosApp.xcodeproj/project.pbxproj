@@ -26,6 +26,9 @@
 		C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */; };
 		C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */; };
 		C2191B7C2764340300E4A04A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7B2764340300E4A04A /* Utils.swift */; };
+		C2191B802764449800E4A04A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B7F2764449800E4A04A /* LoginViewController.swift */; };
+		C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B81276444B500E4A04A /* LoginViewModel.swift */; };
+		C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B832764477800E4A04A /* LoginViewModelContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelContract.swift; sourceTree = "<group>"; };
 		C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelContract.swift; sourceTree = "<group>"; };
 		C2191B7B2764340300E4A04A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C2191B7F2764449800E4A04A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C2191B81276444B500E4A04A /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C2191B832764477800E4A04A /* LoginViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +230,7 @@
 			children = (
 				C2191B79276423FE00E4A04A /* BaseViewModelContract.swift */,
 				C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */,
+				C2191B832764477800E4A04A /* LoginViewModelContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 		C2191B7D2764405D00E4A04A /* LoginScreenViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B81276444B500E4A04A /* LoginViewModel.swift */,
 			);
 			path = LoginScreenViewModel;
 			sourceTree = "<group>";
@@ -269,6 +277,7 @@
 		C2191B7E2764407500E4A04A /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C2191B7F2764449800E4A04A /* LoginViewController.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -450,6 +459,9 @@
 				C2191B672764009500E4A04A /* User.swift in Sources */,
 				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
 				C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */,
+				C2191B802764449800E4A04A /* LoginViewController.swift in Sources */,
+				C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */,
+				C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */,
 				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
 				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,

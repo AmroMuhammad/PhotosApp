@@ -1,7 +1,11 @@
+//
 //  RegisterViewController.swift
-//  Shopify e-commerce
-//  Created by Ayman Omara on 30/05/2021.
-//  Copyright © 2021 ITI41. All rights reserved.
+//  PhotosApp
+//
+//  Created by Amr Muhammad on 12/10/21.
+//  Copyright © 2021 Amr Muhammad. All rights reserved.
+//
+
 import UIKit
 import RxCocoa
 import RxSwift

@@ -7,7 +7,9 @@
     //
 
     import Foundation
-
-    protocol RegisterViewModelContract: BaseViewModelContract{
+    import RxSwift
+    
+    protocol RegisterViewModelContract: BaseViewModelContract {
         func validateRegisterdData(phoneNumber:String,password:String,confirmPassword:String)
+        var doneObservable: Observable<Bool>{get}
 }
