@@ -24,5 +24,5 @@ struct Constants{
     static let loginVC = "LoginViewController"
     static let registerVC = "RegisterViewController"
     static let loginPasswordError = "Phone or password is wrong, please try again"
-
+    static let baseURL = ""
 }

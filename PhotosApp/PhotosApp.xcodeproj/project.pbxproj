@@ -31,6 +31,10 @@
 		C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B832764477800E4A04A /* LoginViewModelContract.swift */; };
 		C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B852764514E00E4A04A /* LocalUserDefault.swift */; };
 		C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */; };
+		C22F1D602764C4CC00B988C6 /* ApplicationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5C2764C4CC00B988C6 /* ApplicationNetworking.swift */; };
+		C22F1D612764C4CC00B988C6 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5D2764C4CC00B988C6 /* BaseAPI.swift */; };
+		C22F1D622764C4CC00B988C6 /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5E2764C4CC00B988C6 /* PhotosAPI.swift */; };
+		C22F1D632764C4CC00B988C6 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5F2764C4CC00B988C6 /* TargetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		C2191B832764477800E4A04A /* LoginViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelContract.swift; sourceTree = "<group>"; };
 		C2191B852764514E00E4A04A /* LocalUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserDefault.swift; sourceTree = "<group>"; };
 		C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberVCDelegate.swift; sourceTree = "<group>"; };
+		C22F1D5C2764C4CC00B988C6 /* ApplicationNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationNetworking.swift; sourceTree = "<group>"; };
+		C22F1D5D2764C4CC00B988C6 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		C22F1D5E2764C4CC00B988C6 /* PhotosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
+		C22F1D5F2764C4CC00B988C6 /* TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +217,10 @@
 		C2191B612763EEC000E4A04A /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				C22F1D5C2764C4CC00B988C6 /* ApplicationNetworking.swift */,
+				C22F1D5D2764C4CC00B988C6 /* BaseAPI.swift */,
+				C22F1D5E2764C4CC00B988C6 /* PhotosAPI.swift */,
+				C22F1D5F2764C4CC00B988C6 /* TargetType.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -456,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22F1D602764C4CC00B988C6 /* ApplicationNetworking.swift in Sources */,
 				C2191B3F2763E57500E4A04A /* PhotosApp.xcdatamodeld in Sources */,
 				C2191B392763E57500E4A04A /* ViewController.swift in Sources */,
 				C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */,
@@ -464,6 +477,7 @@
 				C2191B7C2764340300E4A04A /* Utils.swift in Sources */,
 				C2191B672764009500E4A04A /* User.swift in Sources */,
 				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
+				C22F1D612764C4CC00B988C6 /* BaseAPI.swift in Sources */,
 				C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */,
 				C2191B802764449800E4A04A /* LoginViewController.swift in Sources */,
 				C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */,
@@ -472,7 +486,9 @@
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
 				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,
 				C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */,
+				C22F1D622764C4CC00B988C6 /* PhotosAPI.swift in Sources */,
 				C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */,
+				C22F1D632764C4CC00B988C6 /* TargetType.swift in Sources */,
 				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
