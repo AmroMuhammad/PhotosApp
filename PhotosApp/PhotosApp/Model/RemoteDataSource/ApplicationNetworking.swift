@@ -10,8 +10,7 @@ import Foundation
 import Alamofire
 
 enum ApplicationNetworking{
-    case getProductDetails(id:String)
-    case getMenCategoryProducts
+    case getPhotos(page:String, limit:String)
 }
 
 extension ApplicationNetworking : TargetType{
@@ -24,12 +23,8 @@ extension ApplicationNetworking : TargetType{
     
     var path: String {
         switch self{
-        case .getProductDetails(_):
-            return Constants.baseURL
-            
-        case .getMenCategoryProducts:
-            return Constants.baseURL
-            
+        case .getPhotos:
+            return Constants.urlPath
         }
     }
     
@@ -42,11 +37,8 @@ extension ApplicationNetworking : TargetType{
     
     var task: Task {
         switch self{
-        case .getProductDetails:
-            return .requestPlain
-            
-        case .getMenCategoryProducts:
-            return .requestPlain
+        case .getPhotos(let page, let limit):
+            return .requestParameters(parameters: ["page":page,"limit":limit], encoding: URLEncoding.default)
         }
     }
     var headers: [String : String]? {

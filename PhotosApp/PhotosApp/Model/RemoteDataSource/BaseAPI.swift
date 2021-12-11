@@ -11,7 +11,7 @@ import Alamofire
 
 class BaseAPI<T:TargetType> {
     
-    func fetchData<M:Decodable>(target:T,responseClass : M.Type,completion: @escaping (Result<M?,NSError>) -> Void){
+    func fetchData<M:Decodable>(target:T,responseClass : M.Type,completion: @escaping (Result<[M]?,NSError>) -> Void){
         let method = Alamofire.HTTPMethod(rawValue: target.method.rawValue)
         let headers = Alamofire.HTTPHeaders(target.headers ?? [:])
         let params = buildParams(task: target.task)
@@ -40,7 +40,7 @@ class BaseAPI<T:TargetType> {
                         completion(.failure(error))
                         return
                     }
-                    guard let responseObject = try? JSONDecoder().decode(M.self, from: theJsonData) else {
+                    guard let responseObject = try? JSONDecoder().decode([M].self, from: theJsonData) else {
                         //add custom Error
                         let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
                         print("at responseObject, error on parsing")

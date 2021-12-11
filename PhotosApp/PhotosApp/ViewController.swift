@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        PhotosAPI.sharedInstance.getPhotos(page: "1", limit: "5") { (result) in
+            print("reeeeesult222222")
+        }
     }
 
 

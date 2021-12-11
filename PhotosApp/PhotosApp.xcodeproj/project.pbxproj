@@ -35,6 +35,8 @@
 		C22F1D612764C4CC00B988C6 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5D2764C4CC00B988C6 /* BaseAPI.swift */; };
 		C22F1D622764C4CC00B988C6 /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5E2764C4CC00B988C6 /* PhotosAPI.swift */; };
 		C22F1D632764C4CC00B988C6 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D5F2764C4CC00B988C6 /* TargetType.swift */; };
+		C22F1D652764CB4F00B988C6 /* PhotosAPIContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D642764CB4F00B988C6 /* PhotosAPIContract.swift */; };
+		C22F1D672764CC0D00B988C6 /* PhotoModelElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D662764CC0D00B988C6 /* PhotoModelElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		C22F1D5D2764C4CC00B988C6 /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		C22F1D5E2764C4CC00B988C6 /* PhotosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
 		C22F1D5F2764C4CC00B988C6 /* TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		C22F1D642764CB4F00B988C6 /* PhotosAPIContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIContract.swift; sourceTree = "<group>"; };
+		C22F1D662764CC0D00B988C6 /* PhotoModelElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				C2191B662764009500E4A04A /* User.swift */,
+				C22F1D662764CC0D00B988C6 /* PhotoModelElement.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				C2191B77276423CF00E4A04A /* RegisterViewModelContract.swift */,
 				C2191B832764477800E4A04A /* LoginViewModelContract.swift */,
 				C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */,
+				C22F1D642764CB4F00B988C6 /* PhotosAPIContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				C2191B352763E57500E4A04A /* AppDelegate.swift in Sources */,
 				C2191B7A276423FE00E4A04A /* BaseViewModelContract.swift in Sources */,
 				C2191B6E27641CDC00E4A04A /* RegisterViewController.swift in Sources */,
+				C22F1D672764CC0D00B988C6 /* PhotoModelElement.swift in Sources */,
 				C2191B7C2764340300E4A04A /* Utils.swift in Sources */,
 				C2191B672764009500E4A04A /* User.swift in Sources */,
 				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
@@ -484,6 +491,7 @@
 				C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */,
 				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
+				C22F1D652764CB4F00B988C6 /* PhotosAPIContract.swift in Sources */,
 				C2191B7127641D3E00E4A04A /* RegisterViewModel.swift in Sources */,
 				C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */,
 				C22F1D622764C4CC00B988C6 /* PhotosAPI.swift in Sources */,

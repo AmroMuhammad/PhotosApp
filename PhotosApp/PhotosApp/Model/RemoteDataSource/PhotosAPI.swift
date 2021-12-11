@@ -10,17 +10,19 @@ import Foundation
 import Alamofire
 
 
-class PhotosAPI : BaseAPI<ApplicationNetworking>{
+class PhotosAPI : BaseAPI<ApplicationNetworking>, PhotosAPIContract{
+    
     //add protocol
-    static let shared = PhotosAPI()
+    static let sharedInstance = PhotosAPI()
     
     private override init() {}
 
-//    func getCustomers(completion: @escaping (Result<AllCustomers?,NSError>) -> Void) {
-//            self.fetchData(target: .customers, responseClass: AllCustomers.self) { (results) in
-//                completion(results)
-//            }
-//    }
+    func getPhotos(page: String, limit: String, completion: @escaping (Result<PhotoModel?, NSError>) -> Void) {
+        self.fetchData(target: .getPhotos(page: page, limit: limit), responseClass: PhotoModelElement.self) { (result) in
+            print("reeeeesult")
+            print(result)
+        }
+    }
 
 }
 
