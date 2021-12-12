@@ -103,6 +103,7 @@ class PhotosRepository: PhotosRepositoryContract{
                         print("amrooo123")
                         self.items.accept(photosArray)
                         self.dataSubject.onNext(photosArray)
+                        self.errorsubject.onNext(error.localizedDescription)
                         return
                     }else{
                         print("3")
