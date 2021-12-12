@@ -28,7 +28,11 @@ class RegisterViewController: BaseViewController {
         confirmPasswordTextField.disableAutoFill()
         
         registerViewModel = RegisterViewModel()
-
+        
+        listenOnObservables()
+    }
+    
+    private func listenOnObservables(){
         registerViewModel.errorObservable.subscribe(onNext: {[weak self] (message) in
             guard let self = self else{
                 print("RVC* error in errorObservable")
@@ -59,7 +63,6 @@ class RegisterViewController: BaseViewController {
             self.delegate.setPhoneNumber(phoneNumber: user.phoneNumber)
             self.navigationController?.popViewController(animated: true)
             }).disposed(by: disposeBag)
-        
     }
   
     @IBAction func didSubmitClicked(_ sender: Any) {

@@ -22,7 +22,13 @@ class LoginViewController: BaseViewController {
         loginViewModel = LoginViewModel()
         disposeBag = DisposeBag()
         passwordTextField.disableAutoFill()
+
+        listenOnObservables()
+        loginViewModel.checkForLoggingState()
         
+    }
+    
+    func listenOnObservables(){
         loginViewModel.errorObservable.subscribe(onNext: {[weak self] (message) in
             guard let self = self else{
                 print("LVC* error in errorObservable")
@@ -40,6 +46,7 @@ class LoginViewController: BaseViewController {
             case true:
                 self.showLoading()
             case false:
+                print("amrooooooo111")
                 self.hideLoading()
             }
             }).disposed(by: disposeBag)
@@ -56,12 +63,7 @@ class LoginViewController: BaseViewController {
                 print("LVC* signedInObservable failed")
             }
             }).disposed(by: disposeBag)
-        
-        loginViewModel.checkForLoggingState()
-        
     }
-    
-    
     
     @IBAction func didLoginClicked(_ sender: Any) {
         loginViewModel.validateRegisterdData(phoneNumber: phoneNumberTextField.text!, password: passwordTextField.text!)
@@ -74,7 +76,7 @@ class LoginViewController: BaseViewController {
     }
     
     private func navigateToHomeScreen(){
-        let homeVC = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
+        let homeVC = self.storyboard?.instantiateViewController(identifier: Constants.photosVC) as! PhotosViewController
         phoneNumberTextField.text = ""
         self.navigationController?.pushViewController(homeVC, animated: true)
     }

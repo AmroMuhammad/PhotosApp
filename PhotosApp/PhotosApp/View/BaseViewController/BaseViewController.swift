@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     
     func showLoading() {
         activityIndicator.center = self.view.center
+        activityIndicator.color = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         self.view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }

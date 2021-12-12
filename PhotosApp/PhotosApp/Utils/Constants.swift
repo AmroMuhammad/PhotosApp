@@ -23,6 +23,16 @@ struct Constants{
     static let isLoggedInUserDefaults = "isLogged"
     static let loginVC = "LoginViewController"
     static let registerVC = "RegisterViewController"
+    static let photosVC = "PhotosViewController"
     static let loginPasswordError = "Phone or password is wrong, please try again"
-
+    static let baseURL = "https://picsum.photos/"
+    static let urlPath = "v2/list"
+    static let photoCellNibName = "PhotoTableViewCell"
+    static let photosDatabaseName = "Photos"
+    static let id = "id"
+    static let author = "author"
+    static let width = "width"
+    static let height = "height"
+    static let url = "url"
+    static let downloadURL = "downloadURL"
 }
