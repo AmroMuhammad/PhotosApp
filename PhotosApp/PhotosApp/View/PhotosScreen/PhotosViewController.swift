@@ -80,6 +80,7 @@ class PhotosViewController: BaseViewController {
                 print("PVC* error in doneObservable")
                 return
             }
+            print("amroo12 \(boolValue)")
             switch boolValue{
             case true:
                 self.showLoading()
@@ -102,7 +103,7 @@ class PhotosViewController: BaseViewController {
             let offSetY = self.photosCollectionView.contentOffset.y
             let contentHeight = self.photosCollectionView.contentSize.height
             
-            if offSetY > (contentHeight - self.photosCollectionView.frame.size.height - 100) {
+            if offSetY > (contentHeight - self.photosCollectionView.frame.size.height - 20) {
                 self.photosViewModel.fetchMoreDatas.onNext(())
             }
         }.disposed(by: disposeBag)
@@ -110,6 +111,7 @@ class PhotosViewController: BaseViewController {
         photosViewModel.isLoadingSpinnerAvaliable.subscribe { [weak self] isAvaliable in
             guard let isAvaliable = isAvaliable.element,
                 let self = self else { return }
+            print("amroo1 \(isAvaliable)")
             if(isAvaliable){
                 self.showLoading()
             }else{

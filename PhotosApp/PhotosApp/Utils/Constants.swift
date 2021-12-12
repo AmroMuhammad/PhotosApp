@@ -28,5 +28,11 @@ struct Constants{
     static let baseURL = "https://picsum.photos/"
     static let urlPath = "v2/list"
     static let photoCellNibName = "PhotoTableViewCell"
-
+    static let photosDatabaseName = "Photos"
+    static let id = "id"
+    static let author = "author"
+    static let width = "width"
+    static let height = "height"
+    static let url = "url"
+    static let downloadURL = "downloadURL"
 }

@@ -41,6 +41,9 @@
 		C22F1D702764D8A900B988C6 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D6E2764D8A900B988C6 /* PhotoTableViewCell.swift */; };
 		C22F1D712764D8A900B988C6 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C22F1D6F2764D8A900B988C6 /* PhotoTableViewCell.xib */; };
 		C22F1D742764DEDD00B988C6 /* PhotosViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D732764DEDD00B988C6 /* PhotosViewModelContract.swift */; };
+		C22F1D7727655F5F00B988C6 /* PhotosLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D7627655F5F00B988C6 /* PhotosLocalDataSource.swift */; };
+		C22F1D792765638A00B988C6 /* PhotosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D782765638A00B988C6 /* PhotosRepository.swift */; };
+		C22F1D7B27657F9200B988C6 /* PhotosRepositoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22F1D7A27657F9200B988C6 /* PhotosRepositoryContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		C22F1D6E2764D8A900B988C6 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		C22F1D6F2764D8A900B988C6 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		C22F1D732764DEDD00B988C6 /* PhotosViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModelContract.swift; sourceTree = "<group>"; };
+		C22F1D7627655F5F00B988C6 /* PhotosLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosLocalDataSource.swift; sourceTree = "<group>"; };
+		C22F1D782765638A00B988C6 /* PhotosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepository.swift; sourceTree = "<group>"; };
+		C22F1D7A27657F9200B988C6 /* PhotosRepositoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRepositoryContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,7 @@
 			children = (
 				C2191B68276401A900E4A04A /* UsersLocalDataSource.swift */,
 				C2191B852764514E00E4A04A /* LocalUserDefault.swift */,
+				C22F1D7627655F5F00B988C6 /* PhotosLocalDataSource.swift */,
 			);
 			path = LocalDataSource;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 				C2191B872764551D00E4A04A /* PhoneNumberVCDelegate.swift */,
 				C22F1D642764CB4F00B988C6 /* PhotosAPIContract.swift */,
 				C22F1D732764DEDD00B988C6 /* PhotosViewModelContract.swift */,
+				C22F1D7A27657F9200B988C6 /* PhotosRepositoryContract.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 		C2191B652763EFB000E4A04A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C22F1D782765638A00B988C6 /* PhotosRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -523,11 +532,13 @@
 				C2191B78276423CF00E4A04A /* RegisterViewModelContract.swift in Sources */,
 				C22F1D702764D8A900B988C6 /* PhotoTableViewCell.swift in Sources */,
 				C22F1D612764C4CC00B988C6 /* BaseAPI.swift in Sources */,
+				C22F1D792765638A00B988C6 /* PhotosRepository.swift in Sources */,
 				C2191B76276420B500E4A04A /* BaseViewController.swift in Sources */,
 				C2191B802764449800E4A04A /* LoginViewController.swift in Sources */,
 				C2191B842764477800E4A04A /* LoginViewModelContract.swift in Sources */,
 				C2191B82276444B500E4A04A /* LoginViewModel.swift in Sources */,
 				C2191B6B2764063300E4A04A /* Constants.swift in Sources */,
+				C22F1D7727655F5F00B988C6 /* PhotosLocalDataSource.swift in Sources */,
 				C2191B372763E57500E4A04A /* SceneDelegate.swift in Sources */,
 				C22F1D6D2764D7D400B988C6 /* PhotosViewModel.swift in Sources */,
 				C22F1D652764CB4F00B988C6 /* PhotosAPIContract.swift in Sources */,
@@ -535,6 +546,7 @@
 				C2191B882764551D00E4A04A /* PhoneNumberVCDelegate.swift in Sources */,
 				C22F1D622764C4CC00B988C6 /* PhotosAPI.swift in Sources */,
 				C2191B862764514E00E4A04A /* LocalUserDefault.swift in Sources */,
+				C22F1D7B27657F9200B988C6 /* PhotosRepositoryContract.swift in Sources */,
 				C22F1D632764C4CC00B988C6 /* TargetType.swift in Sources */,
 				C22F1D742764DEDD00B988C6 /* PhotosViewModelContract.swift in Sources */,
 				C2191B69276401A900E4A04A /* UsersLocalDataSource.swift in Sources */,

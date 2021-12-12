@@ -21,14 +21,9 @@ class PhotosViewModel : PhotosViewModelContract{
     
     private var errorsubject = PublishSubject<String>()
     private var loadingsubject = PublishSubject<Bool>()
-    private var photosAPI:PhotosAPIContract!
     
-    
-    var limit = 5
     private var disposeBag:DisposeBag
-    private var pageCounter = 1
-    private var isPaginationRequestStillResume = false
-    private var isRefreshRequstStillResume = false
+    private var repo:PhotosRepositoryContract
     
     
     init() {
@@ -42,75 +37,51 @@ class PhotosViewModel : PhotosViewModelContract{
         refreshControlCompelted = PublishSubject<Void>()
         isLoadingSpinnerAvaliable = PublishSubject<Bool>()
         
-        photosAPI = PhotosAPI.sharedInstance
         disposeBag = DisposeBag()
+        
+        repo = PhotosRepository()
         
         bind()
     }
     
+    
     private func bind() {
         fetchMoreDatas.subscribe { [weak self] _ in
             guard let self = self else { return }
-            self.fetchDummyData(page: self.pageCounter,
-                                isRefreshControl: false)
+            self.repo.fetchMoreDatas.onNext(())
         }
         .disposed(by: disposeBag)
         
         refreshControlAction.subscribe { [weak self] _ in
-            self?.refreshControlTriggered()
+            guard let self = self else { return }
+            self.repo.refreshControlAction.onNext(())
         }
         .disposed(by: disposeBag)
-    }
-    
-    private func refreshControlTriggered() {
-        photosAPI.cancelAllRequests()
-        pageCounter = 1
-        items.accept([])
-        fetchDummyData(page: pageCounter,
-                       isRefreshControl: true)
-    }
-    
-    
-    private func fetchDummyData(page: Int, isRefreshControl: Bool) {
-        if isPaginationRequestStillResume || isRefreshRequstStillResume { return }
-        self.isRefreshRequstStillResume = isRefreshControl
         
-        isPaginationRequestStillResume = true
-        isLoadingSpinnerAvaliable.onNext(true)
+        repo.dataObservable.subscribe(onNext: {[weak self] (photoArray) in
+            guard let self = self else {return}
+            self.items.accept(photoArray)
+        }).disposed(by: disposeBag)
         
-        if pageCounter == 1  || isRefreshControl {
-            isLoadingSpinnerAvaliable.onNext(false)
-        }
+        repo.errorObservable.subscribe(onNext: {[weak self] (message) in
+            guard let self = self else {return}
+            self.errorsubject.onNext(message)
+        }).disposed(by: disposeBag)
         
-        photosAPI.getPhotos(page: String(pageCounter), limit: String(limit)) {[weak self] (result) in
-            guard let self = self else{
-                print("PVM* getPhotos failed")
-                return
-            }
-            switch result{
-            case .success(let photosArray):
-                self.loadingsubject.onNext(false)
-                self.handleDummyData(data: photosArray)
-            case .failure(let error):
-                self.loadingsubject.onNext(false)
-                self.errorsubject.onNext(error.localizedDescription)
-            }
-            self.isLoadingSpinnerAvaliable.onNext(false)
-            self.isPaginationRequestStillResume = false
-            self.isRefreshRequstStillResume = false
+        repo.loadingObservable.subscribe(onNext: {[weak self] (bool) in
+            guard let self = self else {return}
+            self.loadingsubject.onNext(bool)
+        }).disposed(by: disposeBag)
+        
+        repo.isLoadingSpinnerAvaliable.subscribe(onNext: {[weak self] (bool) in
+            guard let self = self else {return}
+            self.isLoadingSpinnerAvaliable.onNext(bool)
+        }).disposed(by: disposeBag)
+        
+        repo.refreshControlCompelted.subscribe(onNext: {[weak self] (_) in
+            guard let self = self else {return}
             self.refreshControlCompelted.onNext(())
-        }
-    }
-    
-    private func handleDummyData(data: PhotoModel?) {
-        var newData = data
-        newData?.append(PhotoModelElement(id: "-1", author: "Added Placeholder", width: 4, height: 5, url: "", downloadURL: ""))
-        if pageCounter == 1 {
-            items.accept(newData ?? [])
-        } else {
-            let oldDatas = items.value
-            items.accept(oldDatas + (newData ?? []))
-        }
-        pageCounter += 1
+        }).disposed(by: disposeBag)
+        
     }
 }
