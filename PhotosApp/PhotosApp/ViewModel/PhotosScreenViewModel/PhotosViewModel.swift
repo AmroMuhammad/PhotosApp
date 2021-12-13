@@ -44,6 +44,10 @@ class PhotosViewModel : PhotosViewModelContract{
         bind()
     }
     
+    func logout() {
+        LocalUserDefaults.sharedInstance.changeLoggingState(loginState: false)
+    }
+    
     
     private func bind() {
         fetchMoreDatas.subscribe { [weak self] _ in
