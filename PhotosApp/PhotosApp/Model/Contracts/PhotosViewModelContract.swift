@@ -10,11 +10,6 @@ import Foundation
 import RxSwift
 import RxRelay
 
-protocol PhotosViewModelContract : BaseViewModelContract {
-    var items: BehaviorRelay<PhotoModel> {get}
-    var fetchMoreDatas: PublishSubject<Void> {get}
-    var refreshControlCompelted : PublishSubject<Void> {get}
-    var isLoadingSpinnerAvaliable : PublishSubject<Bool> {get}
-    var refreshControlAction : PublishSubject<Void> {get}
-
+protocol PhotosViewModelContract : BaseViewModelContract,PaginationContract {
+    func logout()
 }

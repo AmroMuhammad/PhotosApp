@@ -66,8 +66,8 @@ class PhotosRepository: PhotosRepositoryContract{
     private func refreshControlTriggered() {
         photosAPI.cancelAllRequests()
         pageCounter = 1
-        items.accept([])
-        dataSubject.onNext([])
+//        items.accept([])
+//        dataSubject.onNext([])
         fetchData(page: pageCounter,
                   isRefreshControl: true)
     }
@@ -100,13 +100,11 @@ class PhotosRepository: PhotosRepositoryContract{
             case .failure(let error):
                 self.localDataSource.fetchAllPhotos { (photosArray) in
                     if let photosArray = photosArray {
-                        print("amrooo123")
                         self.items.accept(photosArray)
                         self.dataSubject.onNext(photosArray)
                         self.errorsubject.onNext(error.localizedDescription)
                         return
                     }else{
-                        print("3")
                         self.loadingsubject.onNext(false)
                         self.errorsubject.onNext(error.localizedDescription)
                     }

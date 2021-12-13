@@ -13,20 +13,6 @@ import RxSwift
 class PhotosViewController: BaseViewController {
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     
-    private lazy var viewSpinner: UIView = {
-        let view = UIView(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: photosCollectionView.frame.size.width,
-            height: 100)
-        )
-        let spinner = UIActivityIndicatorView()
-        spinner.center = view.center
-        view.addSubview(spinner)
-        spinner.startAnimating()
-        return view
-    }()
-    
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
@@ -38,12 +24,26 @@ class PhotosViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationController()
         registerCellNibFile()
         instantiateRXItems()
         
         listenOnObservables()
         instantiateRefreshControl()
         
+    }
+    
+    private func setupNavigationController(){
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.title = "Photos Gallery"
+        let button1 = UIBarButtonItem(image: UIImage(named: "logout"), style: .plain, target: self, action: #selector(logout))
+        button1.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.navigationItem.rightBarButtonItem  = button1
+    }
+    
+    @objc private func logout(){
+        photosViewModel.logout()
+        navigationController?.popViewController(animated: true)
     }
     
     private func registerCellNibFile(){
@@ -80,7 +80,6 @@ class PhotosViewController: BaseViewController {
                 print("PVC* error in doneObservable")
                 return
             }
-            print("amroo12 \(boolValue)")
             switch boolValue{
             case true:
                 self.showLoading()
@@ -111,7 +110,6 @@ class PhotosViewController: BaseViewController {
         photosViewModel.isLoadingSpinnerAvaliable.subscribe { [weak self] isAvaliable in
             guard let isAvaliable = isAvaliable.element,
                 let self = self else { return }
-            print("amroo1 \(isAvaliable)")
             if(isAvaliable){
                 self.showLoading()
             }else{
@@ -125,6 +123,17 @@ class PhotosViewController: BaseViewController {
             self.refreshControl.endRefreshing()
         }
         .disposed(by: disposeBag)
+        
+        photosCollectionView.rx.modelSelected(PhotoModelElement.self).subscribe(onNext: {[weak self] (photoItem) in
+            guard let self = self else {return}
+            guard let vc = self.storyboard?.instantiateViewController(identifier: Constants.detailsVC, creator: { coder in
+                return DetailsViewController(coder: coder, photo: photoItem)
+            }) else {
+                fatalError("Failed to load EditUserViewController from storyboard.")
+            }
+
+            self.present(vc, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 }
 

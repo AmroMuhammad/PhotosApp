@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol PhotosRepositoryContract : PhotosViewModelContract{
+protocol PhotosRepositoryContract : BaseViewModelContract ,PaginationContract{
     var dataObservable:Observable<PhotoModel> {get}
 }

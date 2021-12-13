@@ -19,7 +19,7 @@ class BaseAPI<T:TargetType> {
             .responseJSON { (response) in
                 guard let statusCode = response.response?.statusCode else {
                     //add custom Error
-                    let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.genericError])
+                    let error = NSError(domain: target.baseURL, code: 0, userInfo: [NSLocalizedDescriptionKey: Constants.noInternetConnection])
                     print("at guard statusCode")
                     completion(.failure(error))
                     return

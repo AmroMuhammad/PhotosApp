@@ -46,7 +46,6 @@ class LoginViewController: BaseViewController {
             case true:
                 self.showLoading()
             case false:
-                print("amrooooooo111")
                 self.hideLoading()
             }
             }).disposed(by: disposeBag)
@@ -78,6 +77,7 @@ class LoginViewController: BaseViewController {
     private func navigateToHomeScreen(){
         let homeVC = self.storyboard?.instantiateViewController(identifier: Constants.photosVC) as! PhotosViewController
         phoneNumberTextField.text = ""
+        passwordTextField.text = ""
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     

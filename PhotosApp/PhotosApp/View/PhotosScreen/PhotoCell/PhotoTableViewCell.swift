@@ -14,8 +14,9 @@ class PhotoTableViewCell: UICollectionViewCell {
     @IBOutlet private weak var authorLabel: UILabel!
     var photoModel:PhotoModelElement!{
         didSet{
-            photoImageView.sd_setImage(with: URL(string: photoModel.downloadURL), placeholderImage: UIImage(named: "placeholder"))
+            photoImageView.sd_setImage(with: URL(string: photoModel.downloadURL), placeholderImage: UIImage(named: Constants.placeholder))
             authorLabel.text = photoModel.author
+            photoImageView.layer.cornerRadius = 20
         }
     }
     

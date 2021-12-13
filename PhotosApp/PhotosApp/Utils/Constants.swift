@@ -35,4 +35,7 @@ struct Constants{
     static let height = "height"
     static let url = "url"
     static let downloadURL = "downloadURL"
+    static let detailsVC = "DetailsViewController"
+    static let placeholder = "placeholder"
+    static let noInternetConnection = "No Internet Connection, Please connect to WI-FI or Mobile Data and try again."
 }
